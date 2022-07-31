@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="css/flappy.css">
+</head>
+
+<body class="conteudo">
+    <h1>Flappy Bird</h1>
+    
+    <div class="form-configuracoes">
+        <form id="form-config-parte-1">
+            <button aria-label='delete item'class="botao-configuracoes" id="botao-sair-config" onClick='alert("Aplicando configurações...\nClique em [OK] para continuar.");new FlappyBird().start()' type='button'>X</button>
+            <h2>Configurações do jogo (Flappy Bird)</h2>
+            
+            <div class="row mb-3">
+              <div class="col-sm-10">
+                <label for="inputNomeJogador" class="col-sm-2 col-form-label">Nome do jogador:</label>
+                <input type="text" class="form-control" id="inputNomeJogador">
+              </div>
+            </div>
+            
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-2 pt-0">Cenário do jogo</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridCenarioJogo1" value="option1">
+                  <label class="form-check-label" for="gridCenarioJogo1">
+                    Noturno
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridCenarioJogo2" value="option2" checked>
+                  <label class="form-check-label" for="gridCenarioJogo2">
+                    Diurno
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+        </form>
+        
+        <form id="form-config-parte-2">
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-2 pt-0">Intervalo entre a abertura dos canos:</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridIntervaloCanos1" value="option1">
+                  <label class="form-check-label" for="gridIntervaloCanos1">
+                    Fácil
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridIntervaloCanos2" value="option2" checked>
+                  <label class="form-check-label" for="gridIntervaloCanos2">
+                    Médio
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridIntervaloCanos3" value="option3">
+                  <label class="form-check-label" for="gridIntervaloCanos3">
+                    Difícil
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+        </form>
+
+        <form id="form-config-parte-3">
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Distância entre os canos:</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridDistanciaCanos1" value="option1">
+                <label class="form-check-label" for="gridDistanciaCanos1">
+                  Fácil
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridDistanciaCanos2" value="option2" checked>
+                <label class="form-check-label" for="gridDistanciaCanos2">
+                  Médio
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridDistanciaCanos3" value="option3">
+                <label class="form-check-label" for="gridDistanciaCanos3">
+                  Difícil
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          
+          <div class="row mb-3">
+            <div class="col-sm-10">
+              <label for="inputVelocidadeJogo" class="col-sm-2 col-form-label">Velocidade do jogo (1 a 10):</label>
+              <input type="text" class="form-control" id="inputVelocidadeJogo">
+            </div>
+          </div>
+          <br>
+          <div class="row mb-3">
+            <div class="col-sm-10">
+              <label for="inputPersonagens" class="col-sm-2 col-form-label">Personagens:</label>
+              <select name="personagens" id="inputPersonagens">
+                <option value="Flappy Bird (Padrão)">Flappy Bird (Padrão)</option>
+                <option value="PAC-MAN">PAC-MAN</option>
+              </select>
+            </div>
+          </div>
+          
+        </form>
+
+        <form id="form-config-parte-4">
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Tipo do jogo</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridTipoJogo1" value="option1">
+                <label class="form-check-label" for="gridTipoJogo1">
+                  Treino
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridTipoJogo2" value="option2" checked>
+                <label class="form-check-label" for="gridTipoJogo2">
+                  Real
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        <form id="form-config-parte-5">
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Velocidade do personagem:</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridVelocidadePersonagem1" value="option1">
+                <label class="form-check-label" for="gridVelocidadePersonagem1">
+                  Baixa
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridVelocidadePersonagem2" value="option2" checked>
+                <label class="form-check-label" for="gridVelocidadePersonagem2">
+                  Média
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridVelocidadePersonagem3" value="option3">
+                <label class="form-check-label" for="gridVelocidadePersonagem3">
+                  Rápida
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          
+        </form>
+
+        <form id="form-config-parte-6">
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Pontuação:</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input-pontuacao" type="radio" name="gridRadiosPontuacao" id="gridPontuacao1" value="optionPontuacao1" checked>
+                <label class="form-check-label" for="gridPontuacao1">
+                  1
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input-pontuacao" type="radio" name="gridRadiosPontuacao" id="gridPontuacao2" value="optionPontuacao2">
+                <label class="form-check-label" for="gridPontuacao2">
+                  10
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input-pontuacao" type="radio" name="gridRadiosPontuacao" id="gridPontuacao3" value="optionPontuacao3">
+                <label class="form-check-label" for="gridPontuacao3">
+                  100
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+        </form>
+        <!-- Não utilizado
+        <form>
+            <div class="row mb-3">
+              <div class="col-sm-10 offset-sm-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    Example checkbox
+                  </label>
+                </div>
+              </div>
+            </div>            
+        </form>
+        -->
+    </div>
+    
+
+    <div wm-flappy>
+
+        <!-- 
+       <img class="passaro" src="img/passaro.png" alt="passaro">
+        <div class="par-de-barreiras">
+            <div class="barreira">
+                <div class="corpo"> </div>
+                <div class="borda"></div>
+            </div>
+            <div class="barreira">
+                <div class="borda"> </div>
+                <div class="corpo"></div>
+            </div>
+        </div>
+        <div class="progresso"> 10 </div>   -->
+    </div>
+
+    <div wm-flappy-night>
+
+      <!-- 
+     <img class="passaro" src="img/passaro.png" alt="passaro">
+      <div class="par-de-barreiras">
+          <div class="barreira">
+              <div class="corpo"> </div>
+              <div class="borda"></div>
+          </div>
+          <div class="barreira">
+              <div class="borda"> </div>
+              <div class="corpo"></div>
+          </div>
+      </div>
+      <div class="progresso"> 10 </div>   -->
+    </div>
+
+
+    <script src="js/flappy.js"></script>
+</body>
+
+</html>

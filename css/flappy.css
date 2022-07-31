@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-Regular.ttf') format('truetype');
+    font-family: 'Pixel';
+    src: url("fontes/Pixel.ttf");
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #0D262D;
+    color: #fff;
+    height: 100%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+
+[wm-flappy] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden;
+}
+
+[wm-flappy-night] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    /*background-color: deepskyblue;*/
+    background-image: url("../img/casino_night_zone_act_2_maniafied_by_soniclover34567.png");
+    overflow: hidden;
+}
+
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);
+}
+
+.item-pontos-adicionais {
+    position: absolute;
+    z-index: 0;
+    background-image: url("../img/pao-de-queijo.png");
+    height: 71px;
+    width: 107px;
+    left: calc(50% - 30px);
+    top: calc(50% - 0px);
+    z-index: 0;
+}
+
+.item-especial{
+    position: absolute;
+    z-index: 0;
+    background-image: url("../img/super_star.png");
+    height: 114px;
+    width: 107px;
+    left: calc(170% - 5px);
+    top: calc(70% - 0px);
+    z-index: 0;
+    scale: 50%;
+}
+
+.par-de-barreiras {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.barreira .borda {
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border: 2px solid #000;
+    z-index: 2;
+}
+
+.barreira .corpo {
+    height: 40px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    z-index: 2;
+}
+
+.progresso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
+    z-index: 100;
+}
+
+.hud-item-esp-timer{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Pixel;
+    font-size: 35px;
+    z-index: 100;
+}
+
+.form-configuracoes{
+    display: grid;
+    gap: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    place-content: center;
+    align-items: flex-start;
+    /*align-self: center;
+    align-items: center;
+    align-content: center;*/
+    border: solid 2px black;
+    width: 30vw;
+    max-width: 89vw;
+    background-color: gray;
+    /*margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 50%;
+    margin-right: 50%;*/
+    z-index: 1;
+}
+
+#botao-sair-config{
+    display: flex;
+    float: right;
+}
